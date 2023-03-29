@@ -11,4 +11,24 @@ const dataSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Data', dataSchema)
+// const customSchema = new mongoose.Schema({
+//     data : [dataSchema],
+//     user : [userSchema]
+// })
+
+// const userSchema = new mongoose.Schema({
+//     name: { 
+//         required: true,
+//         type: String
+//     },
+//     email: {
+//         required: true,
+//         type: String
+//     },
+//     password: {
+//         required: true,
+//         type: String
+//     },
+// })
+
+module.exports = mongoose.model('Data', dataSchema );
