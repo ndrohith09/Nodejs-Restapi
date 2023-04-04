@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+<br><div>// adding some comments here for the function</div><div>
 const app = express();
 const port = 3000;
 
@@ -23,7 +23,7 @@ try{
     //     useFindAndModify: false
     // });
     mongoose.connect(
-        'mongodb+srv://restapi.iablilf.mongodb.net/?retryWrites=true&w=majority',
+        'mongodb+srv://restapi.iablilf.mongodb.net/?retryWrites=true&amp;w=majority',
         {
             dbName : 'DB1',
             user : 'ndrohith09',
@@ -38,11 +38,11 @@ try{
     // );
     const database = mongoose.connection
 
-    database.on('error', (error) => {
+    database.on('error', (error) =&gt; {
         console.log(error)
     })
 
-    database.once('connected', () => {
+    database.once('connected', () =&gt; {
         console.log('Database Connected');
     })
     console.log('Connected to MongoDB');
@@ -56,16 +56,16 @@ console.log('Connecting to MongoDB...');
 
 app.use('/api', routes)
 
-app.all('/test', (req, res) => {
+app.all('/test', (req, res) =&gt; {
     console.log('All' , req.body);    
-// app.all('/test/:id/:name', (req, res) => {    
+// app.all('/test/:id/:name', (req, res) =&gt; {    
     res.send(req.body);    
 // res.send(req.params);
     // console.log('All' , req.query);
     // res.send(req.query);
 })
 
-app.use((req  , res , next) => {
+app.use((req  , res , next) =&gt; {
     const err = new Error('Not Found');
     err.status = 404;
     next(err);
@@ -73,7 +73,7 @@ app.use((req  , res , next) => {
 
 
 // Error handler
-app.use((err, req, res, next) => {
+app.use((err, req, res, next) =&gt; {
     res.status(err.status || 500);
     res.send({
         error: {
@@ -83,7 +83,8 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.listen(port, () => {
+app.listen(port, () =&gt; {
     console.log(`Server started at ${port}...`)
 }); 
 
+</div>
